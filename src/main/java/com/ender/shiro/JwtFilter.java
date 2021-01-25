@@ -1,6 +1,5 @@
 package com.ender.shiro;
 
-import cn.hutool.http.server.HttpServerRequest;
 import cn.hutool.json.JSONUtil;
 import com.ender.common.lang.Result;
 import com.ender.util.JwtUtils;
@@ -16,6 +15,7 @@ import org.springframework.util.StringUtils;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
@@ -36,7 +36,7 @@ public class JwtFilter extends AuthenticatingFilter {
     JwtUtils jwtUtils;
     @Override
     protected AuthenticationToken createToken(ServletRequest servletRequest, ServletResponse servletResponse) throws Exception {
-        HttpServerRequest request=(HttpServerRequest) servletRequest;
+        HttpServletRequest request=(HttpServletRequest) servletRequest;
         String jwt=request.getHeader("Authorization");
         //未获取到jwt就直接返回，禁止登录
         if(StringUtils.isEmpty(jwt)){
@@ -48,7 +48,7 @@ public class JwtFilter extends AuthenticatingFilter {
    //校验有效性，是否超时等等
     @Override
     protected boolean onAccessDenied(ServletRequest servletRequest, ServletResponse servletResponse) throws Exception {
-        HttpServerRequest request=(HttpServerRequest) servletRequest;
+        HttpServletRequest request=(HttpServletRequest) servletRequest;
         String jwt=request.getHeader("Authorization");
         if(StringUtils.isEmpty(jwt)){
             //没有就不需要登录，交给注解处理权限
