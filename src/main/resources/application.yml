@@ -11,8 +11,13 @@ spring:
     password: sjkrootZH
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**Mapper.xml
-#shiro-redis:
-#  enabled: true
-#  redis-manager:
-#    host: 47.104.61.82:6379
-#    password: rediszh
+shiro-redis:
+  enabled: true
+  redis-manager:
+    host: 47.104.61.82:6379
+    password: rediszh
+ender:
+  jwt:
+    secret: f4e2e52034348f86b67cde581c0f9eb5
+    expire: 604800
+    header: Authorization
