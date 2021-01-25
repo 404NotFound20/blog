@@ -7,7 +7,7 @@ public class JwtToken implements AuthenticationToken {
 
     //根据请求信息构建token
     public JwtToken(String jwt) {
-        this.token = "Token"+jwt;
+        this.token = jwt;
     }
     @Override
     public Object getPrincipal() {

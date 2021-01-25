@@ -61,6 +61,7 @@ public class JwtUtils {
      * @return  true：过期
      */
     public boolean isTokenExpired(Date expiration) {
+        log.info("token是否过期");
         return expiration.before(new Date());
     }
 }
