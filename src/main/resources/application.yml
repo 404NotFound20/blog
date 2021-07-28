@@ -6,15 +6,15 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.104.61.82:3306/blog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://1.15.76.5:3306/blog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
-    password: sjkrootZH
+    password: mysqlRootZh
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**Mapper.xml
 shiro-redis:
   enabled: true
   redis-manager:
-    host: 47.104.61.82:6379
+    host: 1.15.76.5
     password: rediszh
 ender:
   jwt:
