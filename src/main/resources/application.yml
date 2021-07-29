@@ -2,7 +2,7 @@ server:
   port: 8082
   servlet:
     context-path: /ender
-# DataSource Config
+# DataSource Config test
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
