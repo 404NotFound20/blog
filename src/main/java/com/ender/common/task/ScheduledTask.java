@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class ScheduledTask {
-    @Scheduled(cron = "* */2 * * * ?")
+    @Scheduled(cron = "0 */2 * * * ?")
     public void dailySms(){
         log.info("今天的短信是：「」  发送时间{}", DateUtil.now());
     }
