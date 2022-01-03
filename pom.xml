@@ -91,6 +91,12 @@
             <artifactId>hutool-all</artifactId>
             <version>5.3.3</version>
         </dependency>
+        <!--腾讯云短信api-->
+        <dependency>
+            <groupId>com.tencentcloudapi</groupId>
+            <artifactId>tencentcloud-sdk-java-sms</artifactId>
+            <version>3.1.426</version>
+        </dependency>
 
     </dependencies>
 
