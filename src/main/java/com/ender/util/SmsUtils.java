@@ -45,7 +45,7 @@ public class SmsUtils {
              * 你也可以直接在代码中写死密钥对，但是小心不要将代码复制、上传或者分享给他人，
              * 以免泄露密钥对危及你的财产安全。
              * CAM密匙查询: https://console.cloud.tencent.com/cam/capi*/
-            Credential cred = new Credential(secretId, secretId);
+            Credential cred = new Credential(secretId, secretKey);
 
             // 实例化一个http选项，可选，没有特殊需求可以跳过
             HttpProfile httpProfile = new HttpProfile();
@@ -113,14 +113,17 @@ public class SmsUtils {
             req.setPhoneNumberSet(phoneNumberSet);
 
             /* 模板参数: 若无模板参数，则设置为空 */
-            String[] templateParamSet = {"5678","21323232"};
+            String[] templateParamSet = {"5678","2132"};
             req.setTemplateParamSet(templateParamSet);
 
             /* 通过 client 对象调用 SendSms 方法发起请求。注意请求方法名与请求对象是对应的
              * 返回的 res 是一个 SendSmsResponse 类的实例，与请求对象对应 */
             log.info("腾讯云请求: {}",SendSmsResponse.toJsonString(req));
             SendSmsResponse res = client.SendSms(req);
-            log.error("腾讯云返回: {}",SendSmsResponse.toJsonString(res));
+            log.info("腾讯云返回: {}",SendSmsResponse.toJsonString(res));
+            if(!res.getSendStatusSet()[0].getCode().equals("Ok")){
+                throw new RuntimeException("短信发送失败:"+res.getSendStatusSet()[0].getMessage());
+            }
         } catch (TencentCloudSDKException e) {
             e.printStackTrace();
         }

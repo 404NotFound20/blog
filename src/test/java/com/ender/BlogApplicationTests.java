@@ -13,6 +13,8 @@ class BlogApplicationTests {
     @Test
     void test() {
         System.out.println(smsUtils.getSdkAppId());
+        System.out.println(smsUtils.getSecretId());
+        System.out.println(smsUtils.getSecretKey());
         smsUtils.sendSms();
     }
 
