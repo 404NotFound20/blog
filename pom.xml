@@ -94,7 +94,7 @@
         <!--腾讯云短信api-->
         <dependency>
             <groupId>com.tencentcloudapi</groupId>
-            <artifactId>tencentcloud-sdk-java-sms</artifactId>
+            <artifactId>tencentcloud-sdk-java</artifactId>
             <version>3.1.426</version>
         </dependency>
 

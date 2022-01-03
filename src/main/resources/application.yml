@@ -23,3 +23,7 @@ ender:
     # token有效时长，7天，单位秒
     expire: 604800
     header: Authorization
+  sms:
+    sdkAppId: 1400617574
+    signName: 曾辉个人技术小栈
+    templateId: 1264557
