@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 public class ScheduledTask {
     @Autowired
     SmsUtils smsUtils;
-    @Scheduled(cron = "*/20 * * * * ?")
+    @Scheduled(cron = "* * 0/2 * * ?")
     public void dailySms(){
         log.info("今天的短信是：「」  发送时间{}", DateUtil.now());
     }

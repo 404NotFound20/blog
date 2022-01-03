@@ -34,11 +34,8 @@ public class SmsUtils {
     private  String sdkAppId;
     private  String templateId;
     private  String signName;
-    /*
-    密钥来源：appid：1301324643
-     */
-    private static final String SECRET_ID = "AKIDvgX9UZNuA9rMbYEdlcDXbOvCCvMXR5SY";
-    private static final String SECRET_KEY = "rRkmX2GDuKTLwGI3XkgMksDJ8hz0jBNI";
+    private  String secretId;
+    private  String secretKey;
 
     public  void sendSms() {
         try {
@@ -48,7 +45,7 @@ public class SmsUtils {
              * 你也可以直接在代码中写死密钥对，但是小心不要将代码复制、上传或者分享给他人，
              * 以免泄露密钥对危及你的财产安全。
              * CAM密匙查询: https://console.cloud.tencent.com/cam/capi*/
-            Credential cred = new Credential(SECRET_ID, SECRET_KEY);
+            Credential cred = new Credential(secretId, secretId);
 
             // 实例化一个http选项，可选，没有特殊需求可以跳过
             HttpProfile httpProfile = new HttpProfile();
